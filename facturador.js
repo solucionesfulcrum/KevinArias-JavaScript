@@ -1,5 +1,6 @@
 const compraTotal = []
-botonCalcular.onclick = function mostrar() {
+
+function mostrar() {
     let producto = document.getElementById("listaProducto").value;
     let cantidad = document.getElementById("cantidad").value;
     console.log(producto)
@@ -36,3 +37,15 @@ botonCalcular.onclick = function mostrar() {
 
     console.log("Total a pagar", suma)
 }
+
+
+let cantidadImp = document.getElementById('cantidad');
+cantidadImp.addEventListener('keyup', function(e) {
+  let keycode = e.keyCode || e.which;
+  if (keycode == 13) {
+    //alert("Enter!");
+    mostrar();
+  }
+});
+
+botonCalcular.onclick= function() {mostrar()}
