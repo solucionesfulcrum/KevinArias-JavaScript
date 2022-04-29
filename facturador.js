@@ -21,7 +21,8 @@ function mostrar() {
         console.log(precio * cantidad * descuento)
         compraTotal.push(precio * cantidad * descuento)
     }
-    console.log("Total a pagar", compraTotal)
+    console.log("compra total", compraTotal)
+    
 
     let suma = 0;
     let lista = "";
@@ -30,12 +31,19 @@ function mostrar() {
         suma += compraTotal[i];
         lista += compraTotal[i] + "<br>"
     }
+    localStorage.setItem('totalPagar', suma);
+    
+
     document.getElementById("datos").innerHTML = "<div>"+lista+"</div>"
 
-    document.getElementById("total").innerHTML = "<span>total a pagar: "+suma+"</span>"
+    //document.getElementById("total").innerHTML = "<span>total a pagar: "+suma+"</span>"
     console.log(compraTotal.length)
 
     console.log("Total a pagar", suma)
+    let sumaStorage = localStorage.getItem('totalPagar');
+
+    document.getElementById("total").innerHTML = "<span>total a pagar: "+sumaStorage+"</span>"
+    console.log("total a pagar desde storage", sumaStorage)
 }
 
 
