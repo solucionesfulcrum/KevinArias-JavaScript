@@ -35,6 +35,13 @@ function mostrar() {
 
     document.getElementById("total").innerHTML = "<span>total a pagar: " + sumaStorage + "</span>"
     console.log("total a pagar desde storage", sumaStorage)
+
+    swal({
+        title: "Bien Hecho",
+        text: "Ud Agrego Un Producto A la factura",
+        icon: "success",
+        button: "agregar!",
+      });
 }
 
 
